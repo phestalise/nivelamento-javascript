@@ -28,3 +28,13 @@ const produtos: Produto[] = [
     emEstoque: true,
   },
 ];
+function exibirProduto(produto: Produto): string {
+  const precoFormatado = produto.preco.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+
+  const status = produto.emEstoque ? " disponível" : " indisponível";
+
+  return `[${produto.categoria}] ${produto.nome} - ${precoFormatado} ${status}`;
+}
