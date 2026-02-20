@@ -38,3 +38,8 @@ function exibirProduto(produto: Produto): string {
 
   return `[${produto.categoria}] ${produto.nome} - ${precoFormatado} ${status}`;
 }
+console.log("=== Catálogo de Produtos ===\n");
+
+for (const produto of produtos) {
+  console.log(exibirProduto(produto));
+}
